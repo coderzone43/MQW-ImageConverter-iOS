@@ -64,10 +64,20 @@ class PaywallViewController: UIViewController {
         networkManager = NetworkManager()
         networkManager?.delegate = self
         retriveProducts()
+        NotificationCenter.default.addObserver(self, selector: #selector(didChangeProStatus), name: .IAPHelperPurchaseNotification, object: nil)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         offersCollectionView.reloadData()
+    }
+    
+    @objc func didChangeProStatus() {
+        if AppDefaults.shared.isPremium {
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                dismiss(animated: true)
+            }
+        }
     }
     
     func setupGestures() {
@@ -112,6 +122,10 @@ class PaywallViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) { [weak self] in
             self?.continuousScroll()
         }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .IAPHelperPurchaseNotification, object: nil)
     }
 }
 
@@ -460,7 +474,7 @@ extension PaywallViewController{
         freeTrialInfoLabel.attributedText = firstString
     }
     
-    func buyPlan(product: SKProduct){
+    func buyPlan(product: SKProduct) {
         SwiftyStoreKit.purchaseProduct(product.productIdentifier, quantity: 1, atomically: true) { result in
             switch result {
             case .success(let purchase):
