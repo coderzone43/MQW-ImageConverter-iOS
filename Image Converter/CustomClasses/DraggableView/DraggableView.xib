@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DraggableView" customModule="Image_Converter" customModuleProvider="target">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="borderWidthFor">
+                    <real key="value" value="2"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusFor">
+                    <real key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="dashPattern">
+                    <real key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="dashSpacing">
+                    <real key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                    <color key="value" name="Primary"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                    <color key="value" name="Primary"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
+                    <point key="value" x="0.0" y="1"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
+                    <point key="value" x="1" y="0.0"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="uploadBtn" destination="p9w-SJ-bZJ" id="H2W-Ak-dLW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="556" height="426"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08K-CG-p6h">
+                    <rect key="frame" x="203" y="138" width="150" height="150"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Upload-Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ds7-mJ-Q9F">
+                            <rect key="frame" x="57" y="0.0" width="36" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="5Ln-v2-7Ut"/>
+                                <constraint firstAttribute="width" constant="36" id="5Nh-w2-uhY"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drop image here or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDD-0n-AMc">
+                            <rect key="frame" x="0.0" y="44" width="150" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="TlY-25-ICY"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max file size: 100 MB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sr1-bR-MWf">
+                            <rect key="frame" x="0.0" y="76" width="150" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="PY5-gZ-rOq"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9w-SJ-bZJ">
+                            <rect key="frame" x="15" y="114" width="120" height="36"/>
+                            <color key="backgroundColor" name="Primary"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="120" id="blb-u5-zAJ"/>
+                                <constraint firstAttribute="height" constant="36" id="iqb-84-fCr"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Browse File">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Upload File"/>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="067-FO-PAC"/>
+                        <constraint firstAttribute="bottom" secondItem="p9w-SJ-bZJ" secondAttribute="bottom" id="0J9-Yx-R2H"/>
+                        <constraint firstItem="Ds7-mJ-Q9F" firstAttribute="top" secondItem="08K-CG-p6h" secondAttribute="top" id="ANl-UT-g7Y"/>
+                        <constraint firstItem="Sr1-bR-MWf" firstAttribute="top" secondItem="tDD-0n-AMc" secondAttribute="bottom" id="C3a-w1-xK7"/>
+                        <constraint firstItem="tDD-0n-AMc" firstAttribute="leading" secondItem="08K-CG-p6h" secondAttribute="leading" id="Ega-GF-7QT"/>
+                        <constraint firstItem="tDD-0n-AMc" firstAttribute="top" secondItem="Ds7-mJ-Q9F" secondAttribute="bottom" constant="8" id="K7H-fS-awk"/>
+                        <constraint firstAttribute="trailing" secondItem="tDD-0n-AMc" secondAttribute="trailing" id="cj1-y6-W7a"/>
+                        <constraint firstItem="p9w-SJ-bZJ" firstAttribute="centerX" secondItem="08K-CG-p6h" secondAttribute="centerX" id="f3O-uk-xrh"/>
+                        <constraint firstItem="Sr1-bR-MWf" firstAttribute="leading" secondItem="08K-CG-p6h" secondAttribute="leading" id="fdp-Qx-37S"/>
+                        <constraint firstAttribute="height" constant="150" id="kKu-Lp-Ey6"/>
+                        <constraint firstItem="Ds7-mJ-Q9F" firstAttribute="centerX" secondItem="08K-CG-p6h" secondAttribute="centerX" id="qM2-k5-hHt"/>
+                        <constraint firstAttribute="trailing" secondItem="Sr1-bR-MWf" secondAttribute="trailing" id="qXi-XM-f3F"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="08K-CG-p6h" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1pu-5v-YKm"/>
+                <constraint firstItem="08K-CG-p6h" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ItS-Nl-M3K"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="304.58015267175574" y="127.8169014084507"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Upload-Icon" width="36" height="36"/>
+        <namedColor name="Primary">
+            <color red="0.18431372549019609" green="0.5725490196078431" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

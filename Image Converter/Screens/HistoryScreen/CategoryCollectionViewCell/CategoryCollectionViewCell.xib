@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoryCollectionViewCell" customModule="Image_Converter" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="178" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="178" height="44"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lah-Au-F3K">
+                        <rect key="frame" x="0.0" y="0.0" width="178" height="44"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9g-8U-eBk">
+                                <rect key="frame" x="16" y="12" width="146" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" name="Offer Label"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="Search Bar"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="i9g-8U-eBk" secondAttribute="trailing" constant="16" id="HnM-Cu-Aoc"/>
+                            <constraint firstItem="i9g-8U-eBk" firstAttribute="leading" secondItem="Lah-Au-F3K" secondAttribute="leading" constant="16" id="Wxt-SZ-07M"/>
+                            <constraint firstAttribute="height" constant="44" id="aJo-zU-NT7"/>
+                            <constraint firstItem="i9g-8U-eBk" firstAttribute="centerY" secondItem="Lah-Au-F3K" secondAttribute="centerY" id="bCN-ft-jkb"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Lah-Au-F3K" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gV5-qt-KRX"/>
+                <constraint firstItem="Lah-Au-F3K" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mT7-bw-IMR"/>
+                <constraint firstAttribute="trailing" secondItem="Lah-Au-F3K" secondAttribute="trailing" id="nGD-Ma-RqX"/>
+                <constraint firstAttribute="bottom" secondItem="Lah-Au-F3K" secondAttribute="bottom" id="zvV-6b-DvB"/>
+            </constraints>
+            <size key="customSize" width="178" height="44"/>
+            <connections>
+                <outlet property="container" destination="Lah-Au-F3K" id="IXs-zq-dmg"/>
+                <outlet property="labelView" destination="i9g-8U-eBk" id="5sd-Tp-gt9"/>
+            </connections>
+            <point key="canvasLocation" x="181.67938931297709" y="17.605633802816904"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Offer Label">
+            <color red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Search Bar">
+            <color red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
