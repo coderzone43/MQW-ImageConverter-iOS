@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24127" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -85,6 +86,9 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="9yA-RS-GxF" firstAttribute="leading" secondItem="af1-xt-rGZ" secondAttribute="leading" id="7eT-1s-Gt2"/>
+                                    <constraint firstAttribute="height" constant="54" id="LGV-5j-BIy">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="74"/>
+                                    </constraint>
                                     <constraint firstItem="CZF-Rg-Pzw" firstAttribute="leading" secondItem="af1-xt-rGZ" secondAttribute="leading" id="NDd-UH-bUN"/>
                                     <constraint firstAttribute="bottom" secondItem="9yA-RS-GxF" secondAttribute="bottom" constant="10" id="WDs-Ml-rL0">
                                         <variation key="heightClass=regular-widthClass=compact" constant="5"/>
@@ -113,6 +117,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Pvh-kd-qrb" firstAttribute="centerY" secondItem="CGZ-Nu-II4" secondAttribute="centerY" id="Wur-Bv-2cT"/>
+                                    <constraint firstAttribute="height" constant="36" id="XdI-3F-Ui5"/>
                                     <constraint firstAttribute="trailing" secondItem="Pvh-kd-qrb" secondAttribute="trailing" constant="12" id="XwP-ZF-TKx"/>
                                     <constraint firstItem="Pvh-kd-qrb" firstAttribute="leading" secondItem="CGZ-Nu-II4" secondAttribute="leading" constant="12" id="voY-Kd-czR"/>
                                 </constraints>
@@ -127,13 +132,10 @@
                         <constraints>
                             <constraint firstItem="hS1-uI-tSa" firstAttribute="centerY" secondItem="wba-pc-pig" secondAttribute="centerY" id="1AV-x9-txN"/>
                             <constraint firstItem="af1-xt-rGZ" firstAttribute="leading" secondItem="hS1-uI-tSa" secondAttribute="trailing" constant="12" id="6DE-uD-4tm"/>
-                            <constraint firstItem="CGZ-Nu-II4" firstAttribute="top" secondItem="wba-pc-pig" secondAttribute="top" constant="18" id="Jmx-eP-yeM"/>
-                            <constraint firstItem="af1-xt-rGZ" firstAttribute="top" secondItem="wba-pc-pig" secondAttribute="top" constant="9" id="LwK-N3-N05"/>
-                            <constraint firstItem="CGZ-Nu-II4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="af1-xt-rGZ" secondAttribute="trailing" constant="8" symbolic="YES" id="Mr5-WX-07c"/>
-                            <constraint firstAttribute="bottom" secondItem="CGZ-Nu-II4" secondAttribute="bottom" constant="18" id="Oke-Nr-r1p"/>
+                            <constraint firstItem="af1-xt-rGZ" firstAttribute="centerY" secondItem="wba-pc-pig" secondAttribute="centerY" id="D4T-8V-tC5"/>
                             <constraint firstItem="hS1-uI-tSa" firstAttribute="leading" secondItem="wba-pc-pig" secondAttribute="leading" constant="14" id="Rn8-1Z-f4z"/>
                             <constraint firstAttribute="trailing" secondItem="CGZ-Nu-II4" secondAttribute="trailing" constant="14" id="UhH-cV-uZp"/>
-                            <constraint firstAttribute="bottom" secondItem="af1-xt-rGZ" secondAttribute="bottom" constant="9" id="itr-CE-17h"/>
+                            <constraint firstItem="CGZ-Nu-II4" firstAttribute="centerY" secondItem="wba-pc-pig" secondAttribute="centerY" id="YoV-VO-CgG"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

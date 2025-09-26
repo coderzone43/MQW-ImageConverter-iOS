@@ -33,11 +33,10 @@ class ProViewController: UIViewController {
         
         if Constants.currentDevice.model == "iPad" {
             topmostConstraint.constant = 20
-            topmostContainerHeightConstraint.constant = 600
             bottommostConstraint.constant = -20
         } else if Constants.screenSize.height < 812 {
             topmostConstraint.constant = 10
-            topmostContainerHeightConstraint.constant = 300
+            topmostContainerHeightConstraint.constant = 350
             bottommostConstraint.constant = -10
         }
         
@@ -48,16 +47,6 @@ class ProViewController: UIViewController {
         networkManager = NetworkManager()
         networkManager?.delegate = self
         retriveProducts()
-        NotificationCenter.default.addObserver(self, selector: #selector(didChangeProStatus), name: .IAPHelperPurchaseNotification, object: nil)
-    }
-    
-    @objc func didChangeProStatus() {
-        if AppDefaults.shared.isPremium {
-            DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
-                dismiss(animated: true)
-            }
-        }
     }
     
     private func setupGestures() {
@@ -148,10 +137,6 @@ class ProViewController: UIViewController {
             }
         }
     }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
 }
 
 extension ProViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -188,7 +173,6 @@ extension ProViewController: UICollectionViewDelegateFlowLayout {
 
 extension ProViewController {
     func retriveProducts() {
-        print("Network Status: \(networkManager?.currentStatus)")
         if appDelegate.products.count > 0 && appDelegate.products.count - 3 == subscriptionPlanList.count && networkManager?.currentStatus != .disconnected {
             DispatchQueue.main.async { [weak self] in
                 guard let self else { return }

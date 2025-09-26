@@ -50,11 +50,9 @@ class PaywallViewController: UIViewController {
         
         if Constants.currentDevice.model == "iPad" {
             topmostConstraint.constant = 20
-            topmostContainerHeightConstraint.constant = 550
             bottommostConstraint.constant = -20
         } else if Constants.screenSize.height < 812 {
             topmostConstraint.constant = 10
-            topmostContainerHeightConstraint.constant = 300
             bottommostConstraint.constant = -10
         }
         
@@ -64,20 +62,10 @@ class PaywallViewController: UIViewController {
         networkManager = NetworkManager()
         networkManager?.delegate = self
         retriveProducts()
-        NotificationCenter.default.addObserver(self, selector: #selector(didChangeProStatus), name: .IAPHelperPurchaseNotification, object: nil)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         offersCollectionView.reloadData()
-    }
-    
-    @objc func didChangeProStatus() {
-        if AppDefaults.shared.isPremium {
-            DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
-                dismiss(animated: true)
-            }
-        }
     }
     
     func setupGestures() {
@@ -122,10 +110,6 @@ class PaywallViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) { [weak self] in
             self?.continuousScroll()
         }
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: .IAPHelperPurchaseNotification, object: nil)
     }
 }
 
@@ -218,15 +202,7 @@ extension PaywallViewController: UICollectionViewDataSource, UICollectionViewDel
 extension PaywallViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == offersCollectionView {
-            if Constants.currentDevice.model == "iPad" {
-                return CGSize(width: collectionView.frame.width, height: 88)
-            } else {
-                if Constants.screenSize.height < 812 {
-                    return CGSize(width: collectionView.frame.width, height: 60)
-                } else {
-                    return CGSize(width: collectionView.frame.width, height: 72)
-                }
-            }
+            return CGSize(width: collectionView.frame.width, height: (collectionView.frame.height - (Constants.currentDevice.model == "iPad" ? 24 : 16 ))/CGFloat(self.subscriptionPlanList.count - 1))
         } else {
             let rotatingItem = rotatingItems[indexPath.item % 4]
             
@@ -474,7 +450,7 @@ extension PaywallViewController{
         freeTrialInfoLabel.attributedText = firstString
     }
     
-    func buyPlan(product: SKProduct) {
+    func buyPlan(product: SKProduct){
         SwiftyStoreKit.purchaseProduct(product.productIdentifier, quantity: 1, atomically: true) { result in
             switch result {
             case .success(let purchase):
