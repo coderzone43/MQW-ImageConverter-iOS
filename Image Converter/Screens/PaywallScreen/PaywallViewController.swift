@@ -12,6 +12,8 @@ enum PlanType {
 
 class PaywallViewController: UIViewController {
     
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var cancelButton: UIView!
     @IBOutlet weak var restoreButton: UIView!
     @IBOutlet weak var bannerContainer: UIView!
@@ -24,7 +26,7 @@ class PaywallViewController: UIViewController {
     @IBOutlet weak var freeTrialButtonLabel: UILabel!
     @IBOutlet weak var freeTrialInfoLabel: UILabel!
     @IBOutlet weak var topmostConstraint: NSLayoutConstraint!
-    @IBOutlet weak var topmostContainerHeightConstraint: NSLayoutConstraint!
+//    @IBOutlet weak var topmostContainerHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottommostConstraint: NSLayoutConstraint!
     
     var currentOffset: CGFloat = 0
@@ -51,9 +53,11 @@ class PaywallViewController: UIViewController {
         if Constants.currentDevice.model == "iPad" {
             topmostConstraint.constant = 20
             bottommostConstraint.constant = -20
+            topConstraint.isActive = false
         } else if Constants.screenSize.height < 812 {
             topmostConstraint.constant = 10
             bottommostConstraint.constant = -10
+            heightConstraint.isActive = false
         }
         
         setupGestures()
@@ -164,7 +168,7 @@ extension PaywallViewController: UICollectionViewDataSource, UICollectionViewDel
                 
                 if indexPath.item == selectedIndex {
                     if product.introductoryPrice != nil {
-                        freeTrialButtonLabel.text = "Start 3-Days Free Trial".localized()
+                        freeTrialButtonLabel.text = "Start For Free".localized()
                         setupUnlimitedFreeAccessLbl(product: product)
                     } else {
                         freeTrialButtonLabel.text = "C O N T I N U E".localized()
@@ -202,7 +206,9 @@ extension PaywallViewController: UICollectionViewDataSource, UICollectionViewDel
 extension PaywallViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == offersCollectionView {
-            return CGSize(width: collectionView.frame.width, height: (collectionView.frame.height - (Constants.currentDevice.model == "iPad" ? 24 : 16 ))/CGFloat(self.subscriptionPlanList.count - 1))
+            let width = collectionView.frame.width
+            let height = collectionView.frame.height / 3.0 - 10
+            return CGSize(width: width, height: height)
         } else {
             let rotatingItem = rotatingItems[indexPath.item % 4]
             

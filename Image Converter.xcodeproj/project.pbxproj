@@ -177,6 +177,8 @@
 				DEVELOPMENT_TEAM = 99MLK8NB5K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Image Converter/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Image Converter";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs permission to download documents.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -215,6 +217,8 @@
 				DEVELOPMENT_TEAM = 99MLK8NB5K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Image Converter/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Image Converter";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs permission to download documents.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
